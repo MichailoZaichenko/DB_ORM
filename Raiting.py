@@ -51,7 +51,7 @@ class Creature_bd:
 
     def selectStudents():
         with Session(Creature_bd.engine) as db:
-            db.query(Students).filter(Students.points < 428).delete()
+            db.query(Students).filter(Students.points > 428).all()
             db.commit()
 
 # Создать БД и таблицу в ней со студентами
